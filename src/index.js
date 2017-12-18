@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 /**
  * @class Olark
- * 
+ *
  * Creates an inlined olark chatbox.
  */
 class Olark extends Component {
@@ -13,7 +13,7 @@ class Olark extends Component {
 
   /**
    * Determine whether `window` exists.
-   * 
+   *
    * @return {Boolean}
    */
   windowExists() {
@@ -22,7 +22,7 @@ class Olark extends Component {
 
   /**
    * Determine whether the olark snippet exists.
-   * 
+   *
    * @return {Boolean}
    */
   snippetExists() {
@@ -31,7 +31,7 @@ class Olark extends Component {
 
   /**
    * Determine whether the olark global exists.
-   * 
+   *
    * @return {Boolean}
    */
   olarkExists() {
@@ -40,7 +40,7 @@ class Olark extends Component {
 
   /**
    * Determine whether the olark snippet has been executed.
-   * 
+   *
    * @return {Boolean}
    */
   olarkWasLaunched() {
@@ -49,7 +49,7 @@ class Olark extends Component {
 
   /**
    * Determine whether the inline container exists.
-   * 
+   *
    * @return {Boolean}
    */
   containerExists() {
@@ -59,7 +59,7 @@ class Olark extends Component {
   /**
    * If we have `window` but the olark snippet does not yet exist,
    * inject it into the page.
-   * 
+   *
    * @return {undefined}
    */
   injectSnippet() {
@@ -95,7 +95,7 @@ class Olark extends Component {
 
           // Since this is a react component, it'll live somewhere within a
           // nested DOM structure and should probably always be inlined.
-          olark.configure('box.inline', true);
+          // olark.configure('box.inline', true);
 
           // Run through all the system config.
           Object.keys(systemConfig || {}).forEach(function (key) {
@@ -119,7 +119,7 @@ class Olark extends Component {
   /**
    * If the olark snippet exists, but it hasn't been executed,
    * execute it.
-   * 
+   *
    * @return {undefined}
    */
   launchOlark() {
@@ -137,7 +137,7 @@ class Olark extends Component {
 
   /**
    * If the olark global exists, reset olark.
-   * 
+   *
    * @return {undefined}
    */
   resetOlark() {
@@ -155,11 +155,11 @@ class Olark extends Component {
    * a snippet. Snippet will be injected only if we
    * are in a `window` environment and if it has not
    * yet been injected.
-   * 
+   *
    * In this case, the snippet is wrapped in another function
    * so that we can control when it is actually executed and
    * so that we can pass configuration values to it.
-   * 
+   *
    * @return {undefined}
    */
   componentWillMount() {
@@ -173,7 +173,7 @@ class Olark extends Component {
    * after being rendered so the only time a reset occurs will be
    * if the chatbox has physically been removed from the DOM at some
    * point.
-   * 
+   *
    * @return {undefined}
    */
   componentDidMount() {
@@ -186,7 +186,7 @@ class Olark extends Component {
 
   /**
    * Don't allow this component to re-render while it is live.
-   * 
+   *
    * @return {Boolean} Always false.
    */
   shouldComponentUpdate() {
@@ -195,7 +195,7 @@ class Olark extends Component {
 
   /**
    * Generate the container that will hold the inline chatbox.
-   * 
+   *
    * @return {JSX}
    */
   render() {
